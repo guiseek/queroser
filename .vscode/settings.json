@@ -1,0 +1,18 @@
+{
+  "editor.tokenColorCustomizations": {
+    "[Isotope Contrast (rainglow)]": {
+      "functions": "#3DF950",
+      "keywords": "#FFFFFF",
+      "numbers": "#fffb00",
+      "strings": "#ff6a00",
+      "comments": "#F5F5F5",
+      "types": "#00b7ff",
+      "variables": "#FF00E6"
+    }
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#010101",
+    "sideBar.background": "#111111",
+    "sideBarSectionHeader.background": "#010101"
+  }
+}

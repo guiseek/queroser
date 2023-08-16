@@ -1,13 +1,23 @@
 {
   "name": "@queroser/source",
   "version": "0.0.0",
+  "scripts": {
+    "commit": "git-cz"
+  },
   "license": "MIT",
-  "scripts": {},
   "private": true,
-  "dependencies": {},
   "devDependencies": {
+    "@nx/angular": "^16.7.0",
+    "@nx/nest": "^16.7.0",
     "@nx/workspace": "16.7.0",
+    "commitizen": "^4.3.0",
+    "cz-git": "^1.7.1",
     "nx": "16.7.0",
     "nx-cloud": "latest"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
