@@ -11,8 +11,5 @@
     }
   },
   "workbench.colorCustomizations": {
-    "activityBar.background": "#010101",
-    "sideBar.background": "#111111",
-    "sideBarSectionHeader.background": "#010101"
   }
 }
