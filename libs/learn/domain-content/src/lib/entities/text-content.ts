@@ -1,7 +1,8 @@
 import {Content} from './content'
 
 export interface TextContent extends Content {
-  content: string
+  text: string
   length: number
+  content: Content
   timeForReading: number
 }

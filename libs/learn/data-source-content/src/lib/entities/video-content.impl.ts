@@ -1,7 +1,13 @@
-import {VideoContent, VideoMimeType} from '@queroser/learn/domain-content'
+import {
+  Content,
+  MediaImage,
+  VideoContent,
+  VideoMimeType,
+} from '@queroser/learn/domain-content'
+import {Column, Entity, JoinColumn, OneToOne} from 'typeorm'
 import {ContentImpl} from './content.impl'
-import {Column} from 'typeorm'
 
+@Entity({name: 'video-contents'})
 export class VideoContentImpl extends ContentImpl implements VideoContent {
   @Column()
   height: number
@@ -24,14 +30,21 @@ export class VideoContentImpl extends ContentImpl implements VideoContent {
   @Column()
   size: number
 
+  @OneToOne(() => ContentImpl)
+  @JoinColumn()
+  content: Content
+
   @Column({default: ''})
   album: string
 
   @Column({default: ''})
   artist: string
 
-  @Column({default: []})
-  artwork: readonly MediaImage[]
+  @Column({
+    type: 'json',
+    default: [],
+  })
+  artwork: MediaImage[]
 
   @Column()
   title: string

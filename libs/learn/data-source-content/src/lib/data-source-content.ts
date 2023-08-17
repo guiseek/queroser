@@ -1,10 +1,34 @@
-import {ContentImpl, LanguageImpl, VideoContentImpl} from './entities'
+import {
+  ContentImpl,
+  LanguageImpl,
+  VideoContentImpl,
+  AudioContentImpl,
+  TextContentImpl,
+} from './entities'
+import {ContentRepository} from '@queroser/learn/domain-content'
+import {getProviderFactoryFor} from '@queroser/shared/util-data'
+import {ContentRepositoryImpl} from './infrastructure'
 
 export const dataSourceContent = {
   entities() {
-    return [LanguageImpl, ContentImpl, VideoContentImpl]
+    return [
+      LanguageImpl,
+      ContentImpl,
+      VideoContentImpl,
+      AudioContentImpl,
+      TextContentImpl,
+    ]
   },
   providers() {
-    return []
+    return [
+      getProviderFactoryFor(
+        ContentRepository,
+        ContentRepositoryImpl,
+        ContentImpl,
+        VideoContentImpl,
+        AudioContentImpl,
+        TextContentImpl
+      ),
+    ]
   },
 }

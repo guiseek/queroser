@@ -1,2 +1,5 @@
+export * from './lib/infrastructure'
 export * from './lib/entities'
 export * from './lib/types'
+export * from './lib/dtos'
+export * from './lib/base'

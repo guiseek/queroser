@@ -89,7 +89,8 @@
       ],
       "@queroser/learn/resource-course": [
         "libs/learn/resource-course/src/index.ts"
-      ]
+      ],
+      "@queroser/shared/util-data": ["libs/shared/util-data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

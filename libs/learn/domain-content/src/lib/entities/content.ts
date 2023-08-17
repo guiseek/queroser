@@ -1,6 +1,6 @@
 import {ContentType} from '../types'
 
-export interface Content {
+export class Content {
   id: string
   contentType: ContentType
   status: boolean

@@ -1,47 +1,42 @@
 import {Controller, Get, Post, Body, Patch, Param, Delete} from '@nestjs/common'
-import {LearnResourceContentService} from './learn-resource-content.service'
-import {CreateLearnResourceContentDto} from './dto/create-learn-resource-content.dto'
-import {UpdateLearnResourceContentDto} from './dto/update-learn-resource-content.dto'
+import {
+  ContentRepository,
+  CreateVideoContentDto,
+  UpdateVideoContentDto,
+} from '@queroser/learn/data-source-content'
 
 @Controller({
-  path: 'learn',
-  version: 'v1'
+  path: 'learn/content',
+  version: 'v1',
 })
 export class LearnResourceContentController {
-  constructor(
-    private readonly learnResourceContentService: LearnResourceContentService
-  ) {}
+  constructor(private readonly contentRepository: ContentRepository) {}
 
-  @Post('contents')
-  create(@Body() createLearnResourceContentDto: CreateLearnResourceContentDto) {
-    return this.learnResourceContentService.create(
-      createLearnResourceContentDto
-    )
+  @Post('videos')
+  createOneVideo(@Body() createVideoContentDto: CreateVideoContentDto) {
+    return this.contentRepository.createOne(createVideoContentDto)
   }
 
-  @Get('contents')
-  findAll() {
-    return this.learnResourceContentService.findAll()
+  @Get('videos')
+  findVideos() {
+    return this.contentRepository.find()
   }
 
-  @Get('contents/:id')
-  findOne(@Param('id') id: string) {
-    return this.learnResourceContentService.findOne(+id)
+  @Get('videos/:id')
+  findOneVideo(@Param('id') id: string) {
+    return this.contentRepository.findOne(id)
   }
 
-  @Patch('contents/:id')
-  update(
+  @Patch('videos/:id')
+  updateOneVideo(
     @Param('id') id: string,
-    @Body() updateLearnResourceContentDto: UpdateLearnResourceContentDto
+    @Body() updateVideoContentDto: UpdateVideoContentDto
   ) {
-    return this.learnResourceContentService.update(
-      +id,
-      updateLearnResourceContentDto
-    )
+    return this.contentRepository.updateOne({...updateVideoContentDto, id})
   }
 
-  @Delete('contents/:id')
-  remove(@Param('id') id: string) {
-    return this.learnResourceContentService.remove(+id)
+  @Delete('videos/:id')
+  removeOneVideo(@Param('id') id: string) {
+    return this.contentRepository.removeOne(id)
   }
 }

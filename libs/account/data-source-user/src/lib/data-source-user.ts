@@ -1,7 +1,7 @@
 import {UserRepository} from '@queroser/account/domain-user'
+import {getProviderFactoryFor} from '@queroser/shared/util-data'
 import {UserRepositoryImpl} from './infrastructure'
 import {LearnerImpl, UserImpl} from './entities'
-import {DataSource} from 'typeorm'
 
 export const dataSourceUser = {
   entities() {
@@ -9,15 +9,12 @@ export const dataSourceUser = {
   },
   providers() {
     return [
-      {
-        provide: UserRepository,
-        useFactory(ds: DataSource) {
-          const userRepository = ds.getRepository(UserImpl)
-          const learnerRepository = ds.getRepository(LearnerImpl)
-          return new UserRepositoryImpl(userRepository, learnerRepository)
-        },
-        inject: [DataSource]
-      },
+      getProviderFactoryFor(
+        UserRepository,
+        UserRepositoryImpl,
+        UserImpl,
+        LearnerImpl
+      ),
     ]
   },
 }

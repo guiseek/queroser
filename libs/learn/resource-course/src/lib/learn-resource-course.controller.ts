@@ -1,40 +1,39 @@
 import {Controller, Get, Post, Body, Patch, Param, Delete} from '@nestjs/common'
-import {LearnResourceCourseService} from './learn-resource-course.service'
-import {CreateLearnResourceCourseDto} from './dto/create-learn-resource-course.dto'
-import {UpdateLearnResourceCourseDto} from './dto/update-learn-resource-course.dto'
+import {
+  CourseRepository,
+  CreateCourseDto,
+  UpdateCourseDto,
+} from '@queroser/learn/api-course'
 
 @Controller({
   path: 'learn',
-  version: 'v1'
+  version: 'v1',
 })
 export class LearnResourceCourseController {
-  constructor(private readonly courseService: LearnResourceCourseService) {}
+  constructor(private readonly courseRepository: CourseRepository) {}
 
   @Post('courses')
-  create(@Body() createLearnResourceCourseDto: CreateLearnResourceCourseDto) {
-    return this.courseService.create(createLearnResourceCourseDto)
+  create(@Body() createLearnResourceCourseDto: CreateCourseDto) {
+    return this.courseRepository.createOne(createLearnResourceCourseDto)
   }
 
   @Get('courses')
   findAll() {
-    return this.courseService.findAll()
+    return this.courseRepository.find()
   }
 
   @Get('courses/:id')
   findOne(@Param('id') id: string) {
-    return this.courseService.findOne(+id)
+    return this.courseRepository.findOne(id)
   }
 
   @Patch('courses/:id')
-  update(
-    @Param('id') id: string,
-    @Body() updateLearnResourceCourseDto: UpdateLearnResourceCourseDto
-  ) {
-    return this.courseService.update(+id, updateLearnResourceCourseDto)
+  update(@Param('id') id: string, @Body() updateCourseDto: UpdateCourseDto) {
+    return this.courseRepository.updateOne({...updateCourseDto, id})
   }
 
   @Delete('courses/:id')
   remove(@Param('id') id: string) {
-    return this.courseService.remove(+id)
+    return this.courseRepository.removeOne(id)
   }
 }

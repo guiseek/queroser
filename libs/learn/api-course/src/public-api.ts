@@ -1,6 +1,8 @@
-export {Course, Lesson} from '@queroser/learn/domain-course'
+export {Course, Lesson, CourseRepository} from '@queroser/learn/domain-course'
 export {
   dataSourceCourse,
   CourseImpl,
   LessonImpl,
+  CreateCourseDto,
+  UpdateCourseDto,
 } from '@queroser/learn/data-source-course'
