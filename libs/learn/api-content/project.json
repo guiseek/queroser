@@ -1,0 +1,28 @@
+{
+  "name": "learn-api-content",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/learn/api-content/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/learn/api-content",
+        "main": "libs/learn/api-content/src/index.ts",
+        "tsConfig": "libs/learn/api-content/tsconfig.lib.json",
+        "assets": []
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/learn/api-content/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": ["type:api", "scope:learn", "side:both"]
+}

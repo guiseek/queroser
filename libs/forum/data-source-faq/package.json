@@ -1,0 +1,10 @@
+{
+  "name": "@queroser/forum/data-source-faq",
+  "version": "0.0.1",
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts"
+}

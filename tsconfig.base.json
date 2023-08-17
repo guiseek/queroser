@@ -1,0 +1,96 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@queroser/account/api-user": ["libs/account/api-user/src/index.ts"],
+      "@queroser/account/data-access-auth": [
+        "libs/account/data-access-auth/src/index.ts"
+      ],
+      "@queroser/account/data-access-user": [
+        "libs/account/data-access-user/src/index.ts"
+      ],
+      "@queroser/account/data-source-user": [
+        "libs/account/data-source-user/src/index.ts"
+      ],
+      "@queroser/account/domain-user": [
+        "libs/account/domain-user/src/index.ts"
+      ],
+      "@queroser/account/feature-auth": [
+        "libs/account/feature-auth/src/index.ts"
+      ],
+      "@queroser/account/feature-shell": [
+        "libs/account/feature-shell/src/index.ts"
+      ],
+      "@queroser/account/feature-user": [
+        "libs/account/feature-user/src/index.ts"
+      ],
+      "@queroser/account/resource-auth": [
+        "libs/account/resource-auth/src/index.ts"
+      ],
+      "@queroser/account/resource-user": [
+        "libs/account/resource-user/src/index.ts"
+      ],
+      "@queroser/forum/data-access-faq": [
+        "libs/forum/data-access-faq/src/index.ts"
+      ],
+      "@queroser/forum/data-source-faq": [
+        "libs/forum/data-source-faq/src/index.ts"
+      ],
+      "@queroser/forum/domain-faq": ["libs/forum/domain-faq/src/index.ts"],
+      "@queroser/forum/feature-faq": ["libs/forum/feature-faq/src/index.ts"],
+      "@queroser/forum/feature-shell": [
+        "libs/forum/feature-shell/src/index.ts"
+      ],
+      "@queroser/forum/resource-faq": ["libs/forum/resource-faq/src/index.ts"],
+      "@queroser/learn/api-content": ["libs/learn/api-content/src/index.ts"],
+      "@queroser/learn/api-course": ["libs/learn/api-course/src/index.ts"],
+      "@queroser/learn/data-access-content": [
+        "libs/learn/data-access-content/src/index.ts"
+      ],
+      "@queroser/learn/data-access-course": [
+        "libs/learn/data-access-course/src/index.ts"
+      ],
+      "@queroser/learn/data-source-content": [
+        "libs/learn/data-source-content/src/index.ts"
+      ],
+      "@queroser/learn/data-source-course": [
+        "libs/learn/data-source-course/src/index.ts"
+      ],
+      "@queroser/learn/domain-content": [
+        "libs/learn/domain-content/src/index.ts"
+      ],
+      "@queroser/learn/domain-course": [
+        "libs/learn/domain-course/src/index.ts"
+      ],
+      "@queroser/learn/feature-content": [
+        "libs/learn/feature-content/src/index.ts"
+      ],
+      "@queroser/learn/feature-course": [
+        "libs/learn/feature-course/src/index.ts"
+      ],
+      "@queroser/learn/feature-shell": [
+        "libs/learn/feature-shell/src/index.ts"
+      ],
+      "@queroser/learn/resource-content": [
+        "libs/learn/resource-content/src/index.ts"
+      ],
+      "@queroser/learn/resource-course": [
+        "libs/learn/resource-course/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

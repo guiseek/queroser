@@ -1,0 +1,108 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "type:domain",
+                "onlyDependOnLibsWithTags": [
+                  "type:domain",
+                  "type:util",
+                  "type:api"
+                ]
+              },
+              {
+                "sourceTag": "type:data-access",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:api",
+                  "type:domain",
+                  "type:data-access"
+                ]
+              },
+              {
+                "sourceTag": "type:data-source",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:api",
+                  "type:domain",
+                  "type:data-source"
+                ]
+              },
+              {
+                "sourceTag": "type:data-source",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:api",
+                  "type:domain",
+                  "type:data-source"
+                ]
+              },
+              {
+                "sourceTag": "type:feature",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:api",
+                  "type:data-access",
+                  "type:ui"
+                ]
+              },
+              {
+                "sourceTag": "type:resource",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:api",
+                  "type:data-source"
+                ]
+              },
+              {
+                "sourceTag": "type:app",
+                "onlyDependOnLibsWithTags": [
+                  "type:util",
+                  "type:api",
+                  "type:feature",
+                  "type:resource"
+                ]
+              },
+              {
+                "sourceTag": "type:api",
+                "onlyDependOnLibsWithTags": [
+                  "type:data-source",
+                  "type:data-access",
+                  "type:domain",
+                  "type:api"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
+    }
+  ]
+}

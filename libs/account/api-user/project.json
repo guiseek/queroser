@@ -1,0 +1,28 @@
+{
+  "name": "account-api-user",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/account/api-user/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/account/api-user",
+        "main": "libs/account/api-user/src/index.ts",
+        "tsConfig": "libs/account/api-user/tsconfig.lib.json",
+        "assets": ["libs/account/api-user/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/account/api-user/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": ["type:api", "scope:account", "side:both"]
+}
