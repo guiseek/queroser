@@ -18,9 +18,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/learn/data-source-course/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/learn/data-source-course/**/*.ts"]
       }
     },
     "test": {

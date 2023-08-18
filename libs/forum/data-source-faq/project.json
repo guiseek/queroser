@@ -18,9 +18,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/forum/data-source-faq/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/forum/data-source-faq/**/*.ts"]
       }
     },
     "test": {

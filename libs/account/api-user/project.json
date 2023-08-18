@@ -18,9 +18,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/account/api-user/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/account/api-user/**/*.ts"]
       }
     }
   },

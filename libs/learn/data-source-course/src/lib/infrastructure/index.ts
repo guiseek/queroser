@@ -1,1 +1,1 @@
-export * from './course.repository.impl';
+export * from './course.repository.impl'

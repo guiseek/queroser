@@ -1,1 +1,1 @@
-export * from './get-factory-for';
+export * from './get-factory-for'

@@ -1,2 +1,2 @@
-export * from './create-video-content';
-export * from './update-video-content';
+export * from './create-video-content'
+export * from './update-video-content'

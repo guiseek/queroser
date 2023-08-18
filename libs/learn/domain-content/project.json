@@ -18,9 +18,7 @@
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "libs/learn/domain-content/**/*.ts"
-        ]
+        "lintFilePatterns": ["libs/learn/domain-content/**/*.ts"]
       }
     },
     "test": {

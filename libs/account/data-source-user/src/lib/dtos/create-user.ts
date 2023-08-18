@@ -1,4 +1,4 @@
-import { ApiProperty } from '@nestjs/swagger'
+import {ApiProperty} from '@nestjs/swagger'
 import {CreateUser} from '@queroser/account/domain-user'
 import {IsEmail, IsNotEmpty} from 'class-validator'
 

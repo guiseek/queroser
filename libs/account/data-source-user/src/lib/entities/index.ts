@@ -1,2 +1,2 @@
-export * from './learner.impl';
-export * from './user.impl';
+export * from './learner.impl'
+export * from './user.impl'
