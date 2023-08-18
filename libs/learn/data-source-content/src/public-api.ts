@@ -1,5 +1,7 @@
 export {
   ContentRepository,
+  TextContentRepository,
+  AudioContentRepository,
   VideoContentRepository,
 } from '@queroser/learn/domain-content'
 export * from './lib/data-source-content'

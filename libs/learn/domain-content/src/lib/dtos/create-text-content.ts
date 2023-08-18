@@ -1,6 +1,4 @@
+import {CreateDto} from '@queroser/shared/util-data'
 import {TextContent} from '../entities'
 
-export type CreateTextContent = Omit<
-  TextContent,
-  'id' | 'createdAt' | 'updatedAt'
->
+export type CreateTextContent = CreateDto<TextContent>

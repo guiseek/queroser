@@ -8,13 +8,17 @@ import {
 import {
   ContentRepository,
   LanguageRepository,
+  AudioContentRepository,
   VideoContentRepository,
+  TextContentRepository,
 } from '@queroser/learn/domain-content'
 import {getProviderFactoryFor} from '@queroser/shared/util-data'
 import {
   ContentRepositoryImpl,
-  VideoContentRepositoryImpl,
   LanguageRepositoryImpl,
+  VideoContentRepositoryImpl,
+  AudioContentRepositoryImpl,
+  TextContentRepositoryImpl,
 } from './infrastructure'
 
 export const dataSourceContent = {
@@ -46,6 +50,16 @@ export const dataSourceContent = {
         VideoContentRepository,
         VideoContentRepositoryImpl,
         VideoContentImpl
+      ),
+      getProviderFactoryFor(
+        AudioContentRepository,
+        AudioContentRepositoryImpl,
+        AudioContentImpl
+      ),
+      getProviderFactoryFor(
+        TextContentRepository,
+        TextContentRepositoryImpl,
+        TextContentImpl
       ),
     ]
   },

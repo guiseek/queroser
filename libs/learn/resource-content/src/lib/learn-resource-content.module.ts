@@ -3,17 +3,15 @@ import {TypeOrmModule} from '@nestjs/typeorm'
 import {dataSourceContent} from '@queroser/learn/data-source-content'
 import {LearnResourceContentController} from './learn-resource-content.controller'
 import {LearnResourceVideoContentController} from './learn-resource-video-content.controller'
-import {LearnResourceVideoContentService} from './learn-resource-video-content.service'
+import {LearnResourceTextContentController} from './learn-resource-text-content.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature(dataSourceContent.entities())],
   controllers: [
     LearnResourceContentController,
+    LearnResourceTextContentController,
     LearnResourceVideoContentController,
   ],
-  providers: [
-    LearnResourceVideoContentService,
-    ...dataSourceContent.providers(),
-  ],
+  providers: [...dataSourceContent.providers()],
 })
 export class LearnResourceContentModule {}

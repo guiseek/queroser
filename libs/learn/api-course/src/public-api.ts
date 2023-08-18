@@ -6,9 +6,10 @@ export {
   CourseRepository,
 } from '@queroser/learn/domain-course'
 export {
-  dataSourceCourse,
   CourseImpl,
   LessonImpl,
+  dataSourceCourse,
   CreateCourseDto,
   UpdateCourseDto,
+  CourseDto
 } from '@queroser/learn/data-source-course'

@@ -1,3 +1,4 @@
+import {UpdateDto} from '@queroser/shared/util-data'
 import {TextContent} from '../entities'
 
-export type UpdateTextContent = Partial<TextContent> & Pick<TextContent, 'id'>
+export type UpdateTextContent = UpdateDto<TextContent>
