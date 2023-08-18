@@ -1,9 +1,10 @@
-import {Controller, Get, Post, Body, Patch, Param, Delete} from '@nestjs/common'
+import {Get, Param, Delete, Query, Controller} from '@nestjs/common'
+import {ApiPaginatedResponse} from '@queroser/shared/resource'
+import {PageOptionsDto} from '@queroser/shared/data-source'
 import {ApiTags} from '@nestjs/swagger'
 import {
   ContentRepository,
-  CreateVideoContentDto,
-  UpdateVideoContentDto,
+  ContentDto,
 } from '@queroser/learn/data-source-content'
 
 @Controller({
@@ -14,31 +15,19 @@ import {
 export class LearnResourceContentController {
   constructor(private readonly contentRepository: ContentRepository) {}
 
-  @Post()
-  createOneVideo(@Body() createVideoContentDto: CreateVideoContentDto) {
-    return this.contentRepository.createOne(createVideoContentDto)
-  }
-
   @Get()
-  findVideos() {
-    return this.contentRepository.find()
+  @ApiPaginatedResponse(ContentDto)
+  find(@Query() pageOptionsDto: PageOptionsDto) {
+    return this.contentRepository.find(pageOptionsDto)
   }
 
   @Get(':id')
-  findOneVideo(@Param('id') id: string) {
+  findOne(@Param('id') id: string) {
     return this.contentRepository.findOne(id)
   }
 
-  @Patch(':id')
-  updateOneVideo(
-    @Param('id') id: string,
-    @Body() updateVideoContentDto: UpdateVideoContentDto
-  ) {
-    return this.contentRepository.updateOne({...updateVideoContentDto, id})
-  }
-
   @Delete(':id')
-  removeOneVideo(@Param('id') id: string) {
+  removeOne(@Param('id') id: string) {
     return this.contentRepository.removeOne(id)
   }
 }

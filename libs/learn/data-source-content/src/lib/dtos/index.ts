@@ -1,3 +1,4 @@
+export * from './content';
 export * from './create-language';
 export * from './create-text-content';
 export * from './create-video-content';

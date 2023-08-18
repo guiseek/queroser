@@ -17,7 +17,7 @@ export class PageOptionsDto implements PageOptions {
   @Min(1)
   @IsInt()
   @IsOptional()
-  readonly page = 1
+  readonly page: number = 1
 
   @ApiPropertyOptional({
     minimum: 1,
@@ -29,7 +29,7 @@ export class PageOptionsDto implements PageOptions {
   @Max(50)
   @IsInt()
   @IsOptional()
-  readonly take = 10
+  readonly take: number = 10
 
   get skip() {
     return (this.page - 1) * this.take
