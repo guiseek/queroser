@@ -59,9 +59,10 @@
               {
                 "sourceTag": "type:resource",
                 "onlyDependOnLibsWithTags": [
+                  "type:data-source",
+                  "type:resource",
                   "type:util",
-                  "type:api",
-                  "type:data-source"
+                  "type:api"
                 ]
               },
               {
@@ -81,6 +82,22 @@
                   "type:domain",
                   "type:api"
                 ]
+              },
+              {
+                "sourceTag": "type:ui",
+                "onlyDependOnLibsWithTags": ["type:util"]
+              },
+              {
+                "sourceTag": "scope:account",
+                "onlyDependOnLibsWithTags": ["scope:account", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:learn",
+                "onlyDependOnLibsWithTags": ["scope:learn", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:forum",
+                "onlyDependOnLibsWithTags": ["scope:forum", "scope:shared"]
               }
             ]
           }

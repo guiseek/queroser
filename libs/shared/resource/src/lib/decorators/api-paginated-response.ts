@@ -1,0 +1,27 @@
+import {ApiExtraModels, ApiOkResponse, getSchemaPath} from '@nestjs/swagger'
+import {Type, applyDecorators} from '@nestjs/common'
+import {PageDto} from '@queroser/shared/data-source'
+
+export const ApiPaginatedResponse = <TModel extends Type<any>>(
+  model: TModel
+) => {
+  return applyDecorators(
+    ApiExtraModels(PageDto, model),
+    ApiOkResponse({
+      description: 'Successfully received model list',
+      schema: {
+        allOf: [
+          {$ref: getSchemaPath(PageDto)},
+          {
+            properties: {
+              data: {
+                type: 'array',
+                items: {$ref: getSchemaPath(model)},
+              },
+            },
+          },
+        ],
+      },
+    })
+  )
+}

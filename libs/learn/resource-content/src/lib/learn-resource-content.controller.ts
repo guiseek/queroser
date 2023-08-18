@@ -1,4 +1,5 @@
 import {Controller, Get, Post, Body, Patch, Param, Delete} from '@nestjs/common'
+import {ApiTags} from '@nestjs/swagger'
 import {
   ContentRepository,
   CreateVideoContentDto,
@@ -6,28 +7,29 @@ import {
 } from '@queroser/learn/data-source-content'
 
 @Controller({
-  path: 'learn/content',
-  version: 'v1',
+  path: 'learn/contents',
+  version: '1',
 })
+@ApiTags('learn')
 export class LearnResourceContentController {
   constructor(private readonly contentRepository: ContentRepository) {}
 
-  @Post('videos')
+  @Post()
   createOneVideo(@Body() createVideoContentDto: CreateVideoContentDto) {
     return this.contentRepository.createOne(createVideoContentDto)
   }
 
-  @Get('videos')
+  @Get()
   findVideos() {
     return this.contentRepository.find()
   }
 
-  @Get('videos/:id')
+  @Get(':id')
   findOneVideo(@Param('id') id: string) {
     return this.contentRepository.findOne(id)
   }
 
-  @Patch('videos/:id')
+  @Patch(':id')
   updateOneVideo(
     @Param('id') id: string,
     @Body() updateVideoContentDto: UpdateVideoContentDto
@@ -35,7 +37,7 @@ export class LearnResourceContentController {
     return this.contentRepository.updateOne({...updateVideoContentDto, id})
   }
 
-  @Delete('videos/:id')
+  @Delete(':id')
   removeOneVideo(@Param('id') id: string) {
     return this.contentRepository.removeOne(id)
   }

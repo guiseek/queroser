@@ -1,4 +1,4 @@
-import {EnvSide} from '../types'
+import {EnvSide} from '@queroser/shared/util-data'
 
 export class Language {
   id: string

@@ -5,9 +5,17 @@ import {
   AudioContentImpl,
   TextContentImpl,
 } from './entities'
-import {ContentRepository} from '@queroser/learn/domain-content'
+import {
+  ContentRepository,
+  LanguageRepository,
+  VideoContentRepository,
+} from '@queroser/learn/domain-content'
 import {getProviderFactoryFor} from '@queroser/shared/util-data'
-import {ContentRepositoryImpl} from './infrastructure'
+import {
+  ContentRepositoryImpl,
+  VideoContentRepositoryImpl,
+  LanguageRepositoryImpl,
+} from './infrastructure'
 
 export const dataSourceContent = {
   entities() {
@@ -28,6 +36,16 @@ export const dataSourceContent = {
         VideoContentImpl,
         AudioContentImpl,
         TextContentImpl
+      ),
+      getProviderFactoryFor(
+        LanguageRepository,
+        LanguageRepositoryImpl,
+        LanguageImpl
+      ),
+      getProviderFactoryFor(
+        VideoContentRepository,
+        VideoContentRepositoryImpl,
+        VideoContentImpl
       ),
     ]
   },

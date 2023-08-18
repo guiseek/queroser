@@ -1,4 +1,5 @@
 import {Controller, Get, Post, Body, Patch, Param, Delete} from '@nestjs/common'
+import {ApiTags} from '@nestjs/swagger'
 import {
   UserRepository,
   CreateUserDto,
@@ -7,8 +8,9 @@ import {
 
 @Controller({
   path: 'account',
-  version: 'v1',
+  version: '1',
 })
+@ApiTags('account')
 export class AccountResourceUserController {
   constructor(private readonly userRepository: UserRepository) {}
 

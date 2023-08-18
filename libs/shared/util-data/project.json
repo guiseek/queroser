@@ -19,8 +19,7 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "libs/shared/util-data/**/*.ts",
-          "libs/shared/util-data/package.json"
+          "libs/shared/util-data/**/*.ts"
         ]
       }
     },

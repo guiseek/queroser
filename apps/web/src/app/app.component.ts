@@ -2,8 +2,16 @@ import {Component} from '@angular/core'
 
 @Component({
   selector: 'queroser-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: ` <router-outlet /> `,
+  styles: [
+    `
+      :host {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    `,
+  ],
 })
 export class AppComponent {
   title = 'web'

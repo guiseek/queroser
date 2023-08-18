@@ -90,6 +90,9 @@
       "@queroser/learn/resource-course": [
         "libs/learn/resource-course/src/index.ts"
       ],
+      "@queroser/shared/data-source": ["libs/shared/data-source/src/index.ts"],
+      "@queroser/shared/resource": ["libs/shared/resource/src/index.ts"],
+      "@queroser/shared/ui-forms": ["libs/shared/ui-forms/src/index.ts"],
       "@queroser/shared/util-data": ["libs/shared/util-data/src/index.ts"]
     }
   },

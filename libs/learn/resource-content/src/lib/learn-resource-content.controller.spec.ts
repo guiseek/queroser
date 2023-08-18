@@ -1,14 +1,12 @@
 import {Test, TestingModule} from '@nestjs/testing'
 import {LearnResourceContentController} from './learn-resource-content.controller'
-import {LearnResourceContentService} from './learn-resource-content.service'
 
 describe('LearnResourceContentController', () => {
   let controller: LearnResourceContentController
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [LearnResourceContentController],
-      providers: [LearnResourceContentService],
+      controllers: [LearnResourceContentController]
     }).compile()
 
     controller = module.get<LearnResourceContentController>(

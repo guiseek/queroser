@@ -1,4 +1,5 @@
 import {Controller, Get, Post, Body, Patch, Param, Delete} from '@nestjs/common'
+import { ApiTags } from '@nestjs/swagger'
 import {
   CourseRepository,
   CreateCourseDto,
@@ -7,8 +8,9 @@ import {
 
 @Controller({
   path: 'learn',
-  version: 'v1',
+  version: '1',
 })
+@ApiTags('learn')
 export class LearnResourceCourseController {
   constructor(private readonly courseRepository: CourseRepository) {}
 
