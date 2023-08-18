@@ -50,9 +50,10 @@
               {
                 "sourceTag": "type:feature",
                 "onlyDependOnLibsWithTags": [
+                  "type:data-access",
+                  "type:feature",
                   "type:util",
                   "type:api",
-                  "type:data-access",
                   "type:ui"
                 ]
               },
@@ -68,10 +69,10 @@
               {
                 "sourceTag": "type:app",
                 "onlyDependOnLibsWithTags": [
-                  "type:util",
-                  "type:api",
                   "type:feature",
-                  "type:resource"
+                  "type:resource",
+                  "type:util",
+                  "type:api"
                 ]
               },
               {
@@ -93,7 +94,7 @@
               },
               {
                 "sourceTag": "scope:learn",
-                "onlyDependOnLibsWithTags": ["scope:learn", "scope:shared"]
+                "onlyDependOnLibsWithTags": ["scope:learn", "scope:shared", "scope:account"]
               },
               {
                 "sourceTag": "scope:forum",

@@ -26,5 +26,5 @@
       }
     }
   },
-  "tags": ["type:resource", "scope:learn"]
+  "tags": ["type:resource", "scope:learn", "side:server"]
 }

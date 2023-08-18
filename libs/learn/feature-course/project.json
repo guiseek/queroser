@@ -3,7 +3,7 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/learn/feature-course/src",
   "prefix": "queroser",
-  "tags": ["type:feature", "scope:learn"],
+  "tags": ["type:feature", "scope:learn", "side:client"],
   "projectType": "library",
   "targets": {
     "test": {
