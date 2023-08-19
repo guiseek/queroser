@@ -1,8 +1,9 @@
 import {CreateCourse, Lesson} from '@queroser/learn/domain-course'
-import {Language} from '@queroser/learn/domain-content'
+import {LanguageDto} from '@queroser/learn/data-source-content'
 import {IsOptional, IsString} from 'class-validator'
-import {Type} from 'class-transformer'
 import {ApiProperty} from '@nestjs/swagger'
+import {Exclude, Type} from 'class-transformer'
+import {LessonDto} from './lesson'
 
 export class CreateCourseDto implements CreateCourse {
   @IsString()
@@ -10,11 +11,11 @@ export class CreateCourseDto implements CreateCourse {
   name: string
 
   @ApiProperty()
-  @Type(() => Language)
-  language: Language
+  @Type(() => LanguageDto)
+  language: LanguageDto
 
+  @Exclude()
   @IsOptional()
-  @ApiProperty()
-  @Type(() => Lesson)
-  lessons: Lesson[]
+  @Type(() => LessonDto)
+  lessons: LessonDto[]
 }

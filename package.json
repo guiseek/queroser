@@ -25,6 +25,7 @@
     "@nx/linter": "16.7.0",
     "@nx/nest": "^16.7.0",
     "@nx/node": "16.7.0",
+    "@nx/plugin": "^16.7.2",
     "@nx/webpack": "16.7.0",
     "@nx/workspace": "16.7.0",
     "@schematics/angular": "~16.2.0",

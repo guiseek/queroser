@@ -15,7 +15,10 @@ export class VideoContentImpl extends ContentImpl implements VideoContent {
   @Column()
   aspectRatio: number
 
-  @Column({type: String})
+  @Column({
+    type: 'enum',
+    enum: VideoMimeType,
+  })
   mimeType: VideoMimeType
 
   @Column()

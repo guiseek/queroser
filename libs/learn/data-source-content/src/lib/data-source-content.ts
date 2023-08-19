@@ -4,6 +4,10 @@ import {
   VideoContentImpl,
   AudioContentImpl,
   TextContentImpl,
+  QuizContentImpl,
+  QuestionContentImpl,
+  AnswerOptionContentImpl,
+  QuestionAnswerContentImpl,
 } from './entities'
 import {
   ContentRepository,
@@ -11,6 +15,7 @@ import {
   AudioContentRepository,
   VideoContentRepository,
   TextContentRepository,
+  QuizContentRepository,
 } from '@queroser/learn/domain-content'
 import {getProviderFactoryFor} from '@queroser/shared/util-data'
 import {
@@ -19,16 +24,21 @@ import {
   VideoContentRepositoryImpl,
   AudioContentRepositoryImpl,
   TextContentRepositoryImpl,
+  QuizContentRepositoryImpl,
 } from './infrastructure'
 
 export const dataSourceContent = {
   entities() {
     return [
-      LanguageImpl,
       ContentImpl,
+      LanguageImpl,
       VideoContentImpl,
       AudioContentImpl,
       TextContentImpl,
+      QuizContentImpl,
+      QuestionContentImpl,
+      AnswerOptionContentImpl,
+      QuestionAnswerContentImpl,
     ]
   },
   providers() {
@@ -60,6 +70,11 @@ export const dataSourceContent = {
         TextContentRepository,
         TextContentRepositoryImpl,
         TextContentImpl
+      ),
+      getProviderFactoryFor(
+        QuizContentRepository,
+        QuizContentRepositoryImpl,
+        QuizContentImpl
       ),
     ]
   },

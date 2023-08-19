@@ -1,8 +1,8 @@
 import {Content, ContentType} from '@queroser/learn/domain-content'
 import {
   Column,
-  CreateDateColumn,
   Entity,
+  CreateDateColumn,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm'
@@ -12,7 +12,10 @@ export class ContentImpl implements Content {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column({type: String})
+  @Column({
+    type: 'enum',
+    enum: ContentType,
+  })
   contentType: ContentType
 
   @Column()

@@ -12,30 +12,30 @@ import {
 } from '@nestjs/common'
 import {ApiTags} from '@nestjs/swagger'
 import {
-  VideoContentDto,
-  CreateVideoContentDto,
-  UpdateVideoContentDto,
-  VideoContentRepository,
+  AudioContentDto,
+  CreateAudioContentDto,
+  UpdateAudioContentDto,
+  AudioContentRepository,
 } from '@queroser/learn/data-source-content'
 import {ApiPaginatedResponse} from '@queroser/shared/resource'
 import {PageOptionsDto} from '@queroser/shared/data-source'
 
 @Controller({
-  path: 'learn/content/videos',
+  path: 'learn/content/audios',
   version: '1',
 })
-@ApiTags('videos')
+@ApiTags('audios')
 @UseInterceptors(ClassSerializerInterceptor)
-export class LearnResourceVideoContentController {
-  constructor(private readonly repository: VideoContentRepository) {}
+export class LearnResourceAudioContentController {
+  constructor(private readonly repository: AudioContentRepository) {}
 
   @Post()
-  createOne(@Body() createVideoContentDto: CreateVideoContentDto) {
-    return this.repository.createOne(createVideoContentDto)
+  createOne(@Body() createAudioContentDto: CreateAudioContentDto) {
+    return this.repository.createOne(createAudioContentDto)
   }
 
   @Get()
-  @ApiPaginatedResponse(VideoContentDto)
+  @ApiPaginatedResponse(AudioContentDto)
   find(@Query() pageOptionsDto: PageOptionsDto) {
     return this.repository.find(pageOptionsDto)
   }
@@ -48,9 +48,9 @@ export class LearnResourceVideoContentController {
   @Patch(':id')
   updateOne(
     @Param('id') id: string,
-    @Body() updateVideoContentDto: UpdateVideoContentDto
+    @Body() updateAudioContentDto: UpdateAudioContentDto
   ) {
-    return this.repository.updateOne({...updateVideoContentDto, id})
+    return this.repository.updateOne({...updateAudioContentDto, id})
   }
 
   @Delete(':id')

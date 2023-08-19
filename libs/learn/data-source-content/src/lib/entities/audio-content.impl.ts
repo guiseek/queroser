@@ -9,7 +9,10 @@ import {ContentImpl} from './content.impl'
 
 @Entity({name: 'audio-contents'})
 export class AudioContentImpl extends ContentImpl implements AudioContent {
-  @Column({type: String})
+  @Column({
+    type: 'enum',
+    enum: AudioMimeType,
+  })
   mimeType: AudioMimeType
 
   @Column()

@@ -1,4 +1,4 @@
+import {UpdateDto} from '@queroser/shared/util-data'
 import {AudioContent} from '../entities'
 
-export type UpdateAudioContent = Partial<AudioContent> &
-  Pick<AudioContent, 'id'>
+export type UpdateAudioContent = UpdateDto<AudioContent>

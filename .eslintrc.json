@@ -32,10 +32,10 @@
               {
                 "sourceTag": "type:data-source",
                 "onlyDependOnLibsWithTags": [
-                  "type:util",
-                  "type:api",
+                  "type:data-source",
                   "type:domain",
-                  "type:data-source"
+                  "type:util",
+                  "type:api"
                 ]
               },
               {

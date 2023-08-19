@@ -1,5 +1,6 @@
 export {
   ContentRepository,
+  QuizContentRepository,
   TextContentRepository,
   AudioContentRepository,
   VideoContentRepository,

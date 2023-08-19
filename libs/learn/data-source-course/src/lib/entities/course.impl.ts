@@ -1,7 +1,6 @@
 import {LanguageImpl} from '@queroser/learn/data-source-content'
-import {Course, Lesson} from '@queroser/learn/domain-course'
+import {Course} from '@queroser/learn/domain-course'
 import {Language} from '@queroser/learn/domain-content'
-import {LessonImpl} from './lesson.impl'
 import {
   Entity,
   Column,
@@ -25,8 +24,8 @@ export class CourseImpl implements Course {
   @JoinColumn()
   language: Language
 
-  @OneToMany(() => LessonImpl, (l) => l.course)
-  lessons: Lesson[]
+  // @OneToMany(() => LessonImpl, (l) => l.course)
+  // lessons: Lesson[]
 
   @CreateDateColumn()
   createdAt: Date
